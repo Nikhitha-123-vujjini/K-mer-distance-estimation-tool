@@ -170,6 +170,8 @@ def heatmap_plot(matrix, labels, outfile):
     fig.colorbar(heatmap)
     ax.set_title("k-mer distance heatmap")
     
+    plt.tight_layout()
+    
     fig.savefig(outfile)
     plt.close()
 
