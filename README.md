@@ -14,18 +14,18 @@ This project implements a Python-based, alignment-free tool for comparing DNA se
 
 ## Dependencies
 
-Python 3
-Biopython — FASTA file parsing (Bio.SeqIO)
-Matplotlib — heatmap visualization
+- Python 3
+- Biopython — FASTA file parsing (Bio.SeqIO)
+- Matplotlib — heatmap visualization
 
 ## Usage
-bashpython kmer_tool.py <fasta_file(s)> -k <kmer_size> -m <metric> -o <output_dir>
+ kmer_tool.py <fasta_file(s)> -k <kmer_size> -m <metric> -o <output_dir>
 
 ### Arguments
 ArgumentFlagDescriptionDefaultFASTA file(s)positionalOne or more input FASTA filesrequiredK-mer size-k / --kmer_sizeLength of k-mers to extractrequiredDistance metric-m / --metriceuclidean, manhattan, or cosineeuclideanOutput directory-o / --output_dirDirectory to save resultsresults
 
 ## Example
-bashpython kmer_tool.py seq1.fasta seq2.fasta -k 4 -m cosine -o my_results
+ kmer_tool.py seq1.fasta seq2.fasta -k 4 -m cosine -o my_results
 
 ## Code Architecture
 The pipeline flows as follows:
@@ -44,16 +44,19 @@ FASTA input → load_fasta → extract_kmers → count_kmers → unique_kmers �
 
 
 ## Distance Metrics
-Three distance metrics are available via the -m flag:
+Three distance metrics are available with the -m flag:
 ### Euclidean
 Distance = √ Σ (v1i − v2i)²
+
 Measures straight-line distance between two vectors. Sensitive to magnitude differences — large differences are amplified by squaring. Useful for detecting overall compositional variation between sequences.
 ### Manhattan
 Distance = Σ |v1i − v2i|
+
 Measures total absolute difference across all vector positions. Less sensitive to large individual differences than Euclidean and efficient to compute in high-dimensional k-mer space.
 ### Cosine
 cosine_similarity = Σ(v1i · v2i) / (√Σv1i² · √Σv2i²)
 cosine_distance   = 1 − cosine_similarity
+
 Measures the angle between two vectors rather than their magnitude. Focuses on compositional pattern similarity, making it ideal for length-independent comparisons. Sequences with similar k-mer composition yield a small cosine distance.
 
 ## Output
@@ -69,11 +72,14 @@ The tool was tested on artificial sequences,orthologs and real genomic data. Acr
 - Manhattan: clearly separates each sequence from others; diagonal is distinctly blue (self-similarity) with red off-diagonal blocks
 - Cosine: best for cross-species comparison — closely related sequences cluster in blue while sequences from different organisms appear in red; particularly effective for comparing orthologs across species
 
-![###Cosine samples results](figures/cos_sample_heatmap.png)
+### Cosine sample results
+![Cosine samples results](figures/cos_sample_heatmap.png)
 
-![###Cosine orthologs results](figures/cos_ortho_heatmap.png)
+### Cosine orthologs results
+![Cosine orthologs results](figures/cos_ortho_heatmap.png)
 
-![###Cosine genomes results](figures/cos_genome_heatmap.png)
+### Cosine genome results
+![Cosine genomes results](figures/cos_genome_heatmap.png)
 
 ## Limitations & Future Improvements
 
