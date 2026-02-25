@@ -64,10 +64,10 @@ $$
 Measures total absolute difference across all vector positions. Less sensitive to large individual differences than Euclidean and efficient to compute in high-dimensional k-mer space.
 ### Cosine
 $$
-cosine similarity = Σ(v₁ᵢ · v₂ᵢ) / (√Σv₁ᵢ² · √Σv₂ᵢ²)
+Cosine  Similarity = Σ(v₁ᵢ · v₂ᵢ) / (√Σv₁ᵢ² · √Σv₂ᵢ²)
 $$
 $$
-cosine distance = 1 - cosine similarity
+Cosine  Distance = 1 - Cosine  Similarity
 $$
 
 Measures the angle between two vectors rather than their magnitude. Focuses on compositional pattern similarity, making it ideal for length-independent comparisons. Sequences with similar k-mer composition yield a small cosine distance.
