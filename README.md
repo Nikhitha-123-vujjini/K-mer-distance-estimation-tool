@@ -64,10 +64,10 @@ $$
 Measures total absolute difference across all vector positions. Less sensitive to large individual differences than Euclidean and efficient to compute in high-dimensional k-mer space.
 ### Cosine
 $$
-cosine_similarity = Σ(v₁ᵢ · v₂ᵢ) / (√Σv₁ᵢ² · √Σv₂ᵢ²)
+cosine similarity = Σ(v₁ᵢ · v₂ᵢ) / (√Σv₁ᵢ² · √Σv₂ᵢ²)
 $$
 $$
-cosine_distance = 1 - cosine_similarity
+cosine distance = 1 - cosine similarity
 $$
 
 Measures the angle between two vectors rather than their magnitude. Focuses on compositional pattern similarity, making it ideal for length-independent comparisons. Sequences with similar k-mer composition yield a small cosine distance.
@@ -113,5 +113,4 @@ The tool was tested on artificial sequences,orthologs and real genomic data. Acr
 ### Author
 
 **Nikhitha Vujjini**
-
-Ms. Bioinformatics.
+M.S. Bioinformatics.
