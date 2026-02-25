@@ -86,13 +86,13 @@ The tool was tested on artificial sequences,orthologs and real genomic data. Acr
 - Cosine: best for cross-species comparison — closely related sequences cluster in blue while sequences from different organisms appear in red; particularly effective for comparing orthologs across species
 
 ### Cosine sample results
-![Cosine samples results](cos_samples/heatmap.png)
+![Cosine samples results](results/cos_artificial_results/heatmap.png)
 
 ### Cosine orthologs results
-![Cosine orthologs results](cos_ortho/heatmap.png)
+![Cosine orthologs results](results/cos_orthologs_results/heatmap.png)
 
 ### Cosine genome results
-![Cosine genomes results](cos_genome/heatmap.png)
+![Cosine genomes results](results/cos_genome_results/heatmap.png)
 
 ## Limitations & Future Improvements
 
