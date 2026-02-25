@@ -19,13 +19,18 @@ This project implements a Python-based, alignment-free tool for comparing DNA se
 - Matplotlib — heatmap visualization
 
 ## Usage
- kmer_tool.py <fasta_file(s)> -k <kmer_size> -m <metric> -o <output_dir>
+python kmer_tool.py <fasta_file(s)> -k <kmer_size> -m <metric> -o <output_dir>
 
 ### Arguments
-ArgumentFlagDescriptionDefaultFASTA file(s)positionalOne or more input FASTA filesrequiredK-mer size-k / --kmer_sizeLength of k-mers to extractrequiredDistance metric-m / --metriceuclidean, manhattan, or cosineeuclideanOutput directory-o / --output_dirDirectory to save resultsresults
+| Argument | Flag | Description | Default |
+|----------|------|------------|----------|
+| FASTA file(s) | positional | One or more input FASTA files | required |
+| K-mer size | `-k / --kmer_size` | Length of k-mers to extract | required |
+| Distance metric | `-m / --metric` | `euclidean`, `manhattan`, or `cosine` | euclidean |
+| Output directory | `-o / --output_dir` | Directory to save results | results |
 
 ## Example
- kmer_tool.py seq1.fasta seq2.fasta -k 4 -m cosine -o my_results
+python kmer_tool.py seq1.fasta seq2.fasta -k 4 -m cosine -o my_results
 
 ## Code Architecture
 The pipeline flows as follows:
@@ -98,5 +103,6 @@ The tool was tested on artificial sequences,orthologs and real genomic data. Acr
 
 
 ### Author
+
 **Nikhitha Vujjini**
 Ms. Bioinformatics.
