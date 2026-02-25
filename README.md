@@ -51,17 +51,24 @@ FASTA input → load_fasta → extract_kmers → count_kmers → unique_kmers �
 ## Distance Metrics
 Three distance metrics are available with the -m flag:
 ### Euclidean
-Distance = sqrt( sum( (v1_i - v2_i)^2 ) )
+$$
+Distance = √Σ (v₁ᵢ − v₂ᵢ)²
+$$
 
 Measures straight-line distance between two vectors. Sensitive to magnitude differences — large differences are amplified by squaring. Useful for detecting overall compositional variation between sequences.
 ### Manhattan
-Distance = sum( abs(v1_i - v2_i) )
+$$
+Distance = Σ |v₁ᵢ − v₂ᵢ|
+$$
 
 Measures total absolute difference across all vector positions. Less sensitive to large individual differences than Euclidean and efficient to compute in high-dimensional k-mer space.
 ### Cosine
-cosine_similarity = dot(v1, v2) / ( sqrt(sum(v1_i^2)) * sqrt(sum(v2_i^2)) )
-
+$$
+cosine_similarity = Σ(v₁ᵢ · v₂ᵢ) / (√Σv₁ᵢ² · √Σv₂ᵢ²)
+$$
+$$
 cosine_distance = 1 - cosine_similarity
+$$
 
 Measures the angle between two vectors rather than their magnitude. Focuses on compositional pattern similarity, making it ideal for length-independent comparisons. Sequences with similar k-mer composition yield a small cosine distance.
 
@@ -106,4 +113,5 @@ The tool was tested on artificial sequences,orthologs and real genomic data. Acr
 ### Author
 
 **Nikhitha Vujjini**
+
 Ms. Bioinformatics.
